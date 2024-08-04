@@ -1,9 +1,9 @@
-import Form from "./Form";
+import TablesAndForms from "./CodeNinja/TablesAndForms";
 
 function App() {
   return (
     <div>
-      <Form />
+      <TablesAndForms />
     </div>
   );
 }
