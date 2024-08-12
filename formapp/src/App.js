@@ -1,9 +1,11 @@
-import TablesAndForms from "./CodeNinja/TablesAndForms";
+// import TablesAndForms from "./CodeNinja/TablesAndForms";
+import TheATS from "../src/CodeNinja/TheATS";
 
 function App() {
   return (
     <div>
-      <TablesAndForms />
+      {/* <TablesAndForms /> */}
+      <TheATS />
     </div>
   );
 }
