@@ -1,5 +1,6 @@
 // import TablesAndForms from "./CodeNinja/TablesAndForms";
 // import TheATS from "../src/CodeNinja/TheATS";
+import ChipsInput from "./Components/Chips";
 import ClosureProblems from "./Javascript/ClosureProblems";
 
 function App() {
@@ -24,7 +25,8 @@ function App() {
   // );
   return (
     <div>
-      <ClosureProblems />
+      {/* <ClosureProblems /> */}
+      <ChipsInput />
     </div>
   );
 }
