@@ -1,10 +1,10 @@
 import React from "react";
-import AstreickValidations from "./ReactCoding/FormWithJest/AstreickValidations";
+import AsteriskValidations from "./React Components/FormWithJest/AsteriskValidations";
 
 function App() {
   return (
     <div>
-      <AstreickValidations />
+      <AsteriskValidations />
     </div>
   );
 }
