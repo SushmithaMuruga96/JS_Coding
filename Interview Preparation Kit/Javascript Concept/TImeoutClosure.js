@@ -7,7 +7,7 @@
 
 //   setTimeout(() => {
 //     console.log(i);
-//   }, 3000);
+//   }, 1000);
 //   console.log("Javascript end");
 // }
 // x();
