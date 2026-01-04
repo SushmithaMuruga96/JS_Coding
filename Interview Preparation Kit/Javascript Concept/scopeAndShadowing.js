@@ -82,10 +82,25 @@
 //   const a = 20; // block scope
 //   console.log(a); // 20
 // }
-let a = 10; // script scope
-function test() {
-  var a = 20; // function scope
-  console.log(a); // 20
+// let a = 10; // script scope
+// function test() {
+//   var a = 20; // function scope
+//   console.log(a); // 20
+// }
+// console.log(a); // 10
+// test();
+
+var a = "gracy";
+if (true) {
+  var a = "hello";
+  let b = "hi";
+  console.log(a, b);
 }
-console.log(a); // 10
-test();
+if (true) {
+  console.log(a);
+}
+
+console.log(a);
+
+// test();
+// test2();

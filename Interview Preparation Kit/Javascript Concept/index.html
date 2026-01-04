@@ -4,11 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>JS Coding</title>
+    <link rel="stylesheet" href="./index.css" />
   </head>
   <body>
     <h1>Welcome to JS Coding</h1>
     <p>This is a simple HTML page to demonstrate JavaScript coding.</p>
+    <button id="clickMe">Click Me</button>
 
     <script src="./scopeAndShadowing.js"></script>
+    <script>
+      document.getElementById("clickMe").addEventListener("click", function () {
+        alert("Button Clicked!");
+      });
+    </script>
   </body>
 </html>

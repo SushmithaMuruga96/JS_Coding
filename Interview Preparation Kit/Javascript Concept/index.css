@@ -1,0 +1,21 @@
+h1 {
+  /* display: none; */
+  /* visibility: hidden; */
+  /* opacity: 0; */
+}
+
+#clickMe {
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  /* opacity: 0; */
+  /* visibility: hidden; */
+  display: none;
+}
+
+#clickMe:hover {
+  background-color: #0056b3;
+}
