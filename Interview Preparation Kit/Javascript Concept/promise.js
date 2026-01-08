@@ -1,9 +1,22 @@
+/* eslint-disable no-undef */
+const cart = ["apple", "banana", "orange"];
+
+//callback hell
+// eslint-disable-next-line no-undef
+createOrder(cart, function (orderId) {
+  proceedToPayment(orderId, function (paymentInfo) {
+    showOrderSummary(paymentInfo, function (orderInfo) {
+      updateWallet(orderInfo, function () {
+        console.log("done");
+      });
+    });
+  });
+});
+
 const GITHUB_API_URL = "https://api.github.com/users/octocat";
 const user = fetch(GITHUB_API_URL);
 
 console.log(user);
-
-const cart = ["apple", "banana", "orange"];
 
 createOrder(cart)
   .then(function (orderId) {
