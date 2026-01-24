@@ -1,45 +1,45 @@
-// const p1 = new Promise((resolve, reject) => {
-//   setTimeout(() => {
-//     resolve("Promise 1 resolved");
-//   }, 5000);
-// });
+const p1 = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve("Promise 1 resolved");
+  }, 5000);
+});
 
-// const p2 = new Promise((resolve, reject) => {
-//   setTimeout(() => {
-//     resolve("Promise 2 resolved");
-//   }, 10000);
-// });
+const p2 = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve("Promise 2 resolved");
+  }, 10000);
+});
 
-// async function getData() {
-//   console.log("Fetching data..."); //1
-//   const res1 = await p1; // waits here until p1 is resolved
-//   console.log(res1); //2
+async function getData() {
+  console.log("Fetching data..."); //1
+  const res1 = await p1; // waits here until p1 is resolved
+  console.log(res1); //2
 
-//   const res2 = await p2; // waits here until p2 is resolved
-//   console.log(res2); //3
-//   console.log("All data fetched"); //4
-// }
+  const res2 = await p2; // waits here until p2 is resolved
+  console.log(res2); //3
+  console.log("All data fetched"); //4
+}
 
-// getData();
+getData();
 
-// async function getData() {
-//   //   return "Namaste";
-//   return p;
-// }
-// const dataPromise = getData();
-// console.log(dataPromise);
-// dataPromise.then((res) => console.log(res));
+async function getData() {
+  //   return "Namaste";
+  return p;
+}
+const dataPromise = getData();
+console.log(dataPromise);
+dataPromise.then((res) => console.log(res));
 
 // Without async-await normal promise chaining
-// function getData() {
-//   console.log("Fetching data..."); // 1
-//   p1.then((res1) => {
-//     console.log(res1); //3
-//   });
+function getData() {
+  console.log("Fetching data..."); // 1
+  p1.then((res1) => {
+    console.log(res1); //3
+  });
 
-//   console.log("All data fetched"); // 2
-// }
-// getData();
+  console.log("All data fetched"); // 2
+}
+getData();
 
 //keytakeaways
 // 1. async function always returns a promise
@@ -50,7 +50,7 @@
 //thats developer uses async-await than normal promise chaining
 //for better understanding of code flow
 
-// const API_URL = "https://api.github.com/users/SushmithaMuruga96";
+const API_URL = "https://api.github.com/users/SushmithaMuruga96";
 const API_URL = "https://someinvalidurl.com/data"; // to test error handling
 async function getData() {
   try {
@@ -62,3 +62,45 @@ async function getData() {
   }
 }
 getData();
+
+// using Promises and .then()/.catch()
+fetch("https://api.example.com/data")
+  .then((response) => {
+    // Check if the request was successful (status in the 200-299 range)
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    return response.json();
+    // Parse the response body as JSON because response body is in readable stream
+  })
+  .then((data) => {
+    console.log(data); // Work with the JSON data
+  })
+  .catch((error) => {
+    console.error("Fetch error:", error); // Handle network errors or those thrown above
+  });
+
+const postData = {
+  title: "A new post",
+  body: "Content of the post.",
+  userId: 1,
+};
+
+const token = "your-auth-token-here"; // Replace with your actual token
+async function createPost() {
+  try {
+    const response = await fetch("https://jsonplaceholder.typicode.com/posts", {
+      method: "POST", // Specify the method
+      headers: {
+        "Content-Type": "application/json", // Indicate the content type
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify(postData), // Convert the JavaScript object to a JSON string
+    });
+    const data = await response.json();
+    console.log("Success:", data);
+  } catch (error) {
+    console.error("Error:", error);
+  }
+}
+createPost();
