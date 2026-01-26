@@ -41,15 +41,6 @@ function getData() {
 }
 getData();
 
-//keytakeaways
-// 1. async function always returns a promise
-// 2. await can be used only inside async function
-// 3. await makes suspended code until that promise settles and returns its result
-// 4. promises willnot block the main thread but
-//await suspends the code and continues to execute from there when the promise is settled
-//thats developer uses async-await than normal promise chaining
-//for better understanding of code flow
-
 const API_URL = "https://api.github.com/users/SushmithaMuruga96";
 const API_URL = "https://someinvalidurl.com/data"; // to test error handling
 async function getData() {
@@ -104,3 +95,13 @@ async function createPost() {
   }
 }
 createPost();
+
+//keytakeaways
+// 1. async function always returns a promise
+// 2. await can be used only inside async function
+// 3. await suspended code until that promise settles down and returns its result
+// 4. promises willnot block the main thread
+// thats why code after promise will execute first
+//5.await suspends the code and continues to execute from there when the promise is settled
+//thats why developer uses async-await than normal promise chaining
+//for better understanding of code flow
